@@ -16,15 +16,70 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.pivaiot'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
+version = '1.0.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+// 依赖库的版本
+ext {
+  guavaVersion = '20.0'
+  springFoxVersion = '2.9.2'
+  bitwalkerUserAgentUtilsVersion = '1.21'
 }
 
+// 所有的项目(包括子项目)的依赖版本管理
+// 这样在子项目中就不需要指定依赖版本
+allprojects {
 
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+
+  dependencyManagement {
+    dependencies {
+      dependency "com.google.guava:guava:$guavaVersion"
+      dependency "io.springfox:springfox-swagger2:$springFoxVersion"
+      dependency "io.springfox:springfox-swagger-ui:$springFoxVersion"
+      dependency "io.netty:netty-all:$nettyVersion"
+      dependency "eu.bitwalker:UserAgentUtils:$bitwalkerUserAgentUtilsVersion"
+    }
+  }
+}
+
+// 当前项目的依赖
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-web')
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
+  // Util
+  implementation("com.google.guava:guava")
+  implementation("org.apache.commons:commons-lang3")
+  compileOnly('org.projectlombok:lombok')
+  // 可以启用热更新
+  //runtimeOnly('org.springframework.boot:spring-boot-devtools')
+  implementation('eu.bitwalker:UserAgentUtils')
+
+  // Metric
+  implementation('org.springframework.boot:spring-boot-starter-actuator')
+
+  // Database
+  implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+  implementation('org.springframework.boot:spring-boot-starter-jdbc')
+  runtimeOnly('mysql:mysql-connector-java')
+
+  // Cache
+  //implementation('org.springframework.boot:spring-boot-starter-data-redis')
+
+  // Web
+  //implementation('org.springframework.boot:spring-boot-starter-security')
+  implementation('org.springframework.boot:spring-boot-starter-web')
+
+  // Session
+  //implementation('org.springframework.session:spring-session-data-redis')
+
+  // RESTful API Doc
+  implementation("io.springfox:springfox-swagger2")
+  implementation("io.springfox:springfox-swagger-ui")
+
+  // Test
+  testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
