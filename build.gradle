@@ -42,7 +42,6 @@ allprojects {
       dependency "com.google.guava:guava:$guavaVersion"
       dependency "io.springfox:springfox-swagger2:$springFoxVersion"
       dependency "io.springfox:springfox-swagger-ui:$springFoxVersion"
-      dependency "io.netty:netty-all:$nettyVersion"
       dependency "eu.bitwalker:UserAgentUtils:$bitwalkerUserAgentUtilsVersion"
     }
   }
