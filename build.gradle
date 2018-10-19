@@ -23,10 +23,9 @@ targetCompatibility = 1.8
 
 // 依赖库的版本
 ext {
-  guavaVersion = '20.0'
   springFoxVersion = '2.9.2'
-  bitwalkerUserAgentUtilsVersion = '1.21'
   commonVersion = '1.0.1'
+  pebbleStarterVersion = '2.6.0'
 }
 
 // 所有的项目(包括子项目)的依赖版本管理
@@ -43,8 +42,8 @@ allprojects {
     dependencies {
       dependency "io.springfox:springfox-swagger2:$springFoxVersion"
       dependency "io.springfox:springfox-swagger-ui:$springFoxVersion"
-      dependency "eu.bitwalker:UserAgentUtils:$bitwalkerUserAgentUtilsVersion"
       dependency "com.github.pivaiot:common:$commonVersion"
+      dependency "io.pebbletemplates:pebble-spring-boot-2-starter:$pebbleStarterVersion"
     }
   }
 }
@@ -56,7 +55,6 @@ dependencies {
   compileOnly('org.projectlombok:lombok')
   // 可以启用热更新
   //runtimeOnly('org.springframework.boot:spring-boot-devtools')
-  implementation('eu.bitwalker:UserAgentUtils')
 
   // Metric
   implementation('org.springframework.boot:spring-boot-starter-actuator')
@@ -72,6 +70,9 @@ dependencies {
   // Web
   //implementation('org.springframework.boot:spring-boot-starter-security')
   implementation('org.springframework.boot:spring-boot-starter-web')
+
+  // Template Engine
+  implementation("io.pebbletemplates:pebble-spring-boot-2-starter")
 
   // Session
   //implementation('org.springframework.session:spring-session-data-redis')

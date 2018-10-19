@@ -17,4 +17,3 @@ The project is a working application with a minimal setup. It contains:
     * [pebble](https://github.com/PebbleTemplates/pebble), Server Side Template Engine
   * common plugins and libraries
   * swagger configuration for api documentation
-
