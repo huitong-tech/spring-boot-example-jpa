@@ -2,10 +2,9 @@ package com.pivaiot.starter.project.web.controller;
 
 import com.pivaiot.common.http.ResponseJson;
 import com.pivaiot.starter.project.data.hello.Greeting;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 import static com.pivaiot.common.http.ResponseJson.ok;
 
@@ -14,7 +13,7 @@ import static com.pivaiot.common.http.ResponseJson.ok;
 @RequestMapping("/api")
 public class HelloController extends BaseController {
 
-    @GetMapping("/hello")
+    @PostMapping("/hello")
     public String says(@RequestParam String says) {
         return helloService.sayHello(says);
     }
@@ -25,4 +24,12 @@ public class HelloController extends BaseController {
         return ok(Greeting.builder().says("hello").build());
 
     }
+
+    @GetMapping("/greetings")
+    public ResponseJson<List<Greeting>> findAllGreetings() {
+
+        return ok(helloService.findAllGreetings());
+
+    }
+
 }
