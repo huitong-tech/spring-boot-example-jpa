@@ -1,7 +1,7 @@
 package com.pivaiot.starter.project.web.resolver;
 
-import com.pivaiot.starter.project.common.annotation.Limit;
-import com.pivaiot.starter.project.common.util.IpUtil;
+import com.pivaiot.common.annotation.Limit;
+import com.pivaiot.common.util.IpUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;

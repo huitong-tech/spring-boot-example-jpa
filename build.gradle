@@ -26,6 +26,7 @@ ext {
   guavaVersion = '20.0'
   springFoxVersion = '2.9.2'
   bitwalkerUserAgentUtilsVersion = '1.21'
+  commonVersion = '1.0.1'
 }
 
 // 所有的项目(包括子项目)的依赖版本管理
@@ -34,15 +35,16 @@ allprojects {
 
   repositories {
     mavenLocal()
+    maven { url 'https://jitpack.io' }
     mavenCentral()
   }
 
   dependencyManagement {
     dependencies {
-      dependency "com.google.guava:guava:$guavaVersion"
       dependency "io.springfox:springfox-swagger2:$springFoxVersion"
       dependency "io.springfox:springfox-swagger-ui:$springFoxVersion"
       dependency "eu.bitwalker:UserAgentUtils:$bitwalkerUserAgentUtilsVersion"
+      dependency "com.github.pivaiot:common:$commonVersion"
     }
   }
 }
@@ -50,8 +52,7 @@ allprojects {
 // 当前项目的依赖
 dependencies {
   // Util
-  implementation("com.google.guava:guava")
-  implementation("org.apache.commons:commons-lang3")
+  implementation('com.github.pivaiot:common')
   compileOnly('org.projectlombok:lombok')
   // 可以启用热更新
   //runtimeOnly('org.springframework.boot:spring-boot-devtools')

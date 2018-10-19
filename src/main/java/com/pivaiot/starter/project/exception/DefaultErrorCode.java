@@ -1,7 +1,7 @@
 package com.pivaiot.starter.project.exception;
 
 
-import com.pivaiot.starter.project.common.exception.ErrorCode;
+import com.pivaiot.common.exception.ErrorCode;
 
 public enum DefaultErrorCode implements ErrorCode {
     GENERAL_ERROR(100001),

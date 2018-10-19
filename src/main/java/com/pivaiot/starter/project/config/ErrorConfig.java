@@ -1,7 +1,7 @@
 package com.pivaiot.starter.project.config;
 
-import com.pivaiot.starter.project.common.exception.DefaultException;
-import com.pivaiot.starter.project.common.http.ResponseJson;
+import com.pivaiot.common.exception.DefaultException;
+import com.pivaiot.common.http.ResponseJson;
 import com.pivaiot.starter.project.exception.DefaultErrorCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
