@@ -4,7 +4,7 @@ package com.pivaiot.starter.project.exception;
 import com.pivaiot.common.exception.ErrorCode;
 
 public enum DefaultErrorCode implements ErrorCode {
-    GENERAL_ERROR(100001),
+    UNKNOWN(100001),
     NOT_FOUND(100404);
 
     private Integer id;

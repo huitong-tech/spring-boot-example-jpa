@@ -77,7 +77,7 @@ public class ErrorConfig extends BasicErrorController {
             return new ResponseEntity<>(ResponseJson.err(getAppName(), ex), HttpStatus.BAD_REQUEST);
         } else {
             return new ResponseEntity<>(ResponseJson.err(getAppName(), new DefaultException(throwable,
-                    DefaultErrorCode.GENERAL_ERROR)),
+                    DefaultErrorCode.UNKNOWN)),
                     HttpStatus.BAD_REQUEST);
         }
     }
