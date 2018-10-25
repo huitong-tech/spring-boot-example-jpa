@@ -1,4 +1,4 @@
-package com.pivaiot.starter.project.data.hello;
+package com.pivaiot.starter.project.model.hello;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

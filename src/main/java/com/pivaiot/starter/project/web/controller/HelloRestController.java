@@ -1,7 +1,7 @@
 package com.pivaiot.starter.project.web.controller;
 
 import com.pivaiot.common.http.ResponseJson;
-import com.pivaiot.starter.project.data.hello.Greeting;
+import com.pivaiot.starter.project.model.hello.Greeting;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

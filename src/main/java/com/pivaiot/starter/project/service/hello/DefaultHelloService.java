@@ -1,6 +1,6 @@
 package com.pivaiot.starter.project.service.hello;
 
-import com.pivaiot.starter.project.data.hello.Greeting;
+import com.pivaiot.starter.project.model.hello.Greeting;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -30,7 +30,7 @@ public class DefaultHelloService implements HelloService {
     @Override
     public List<Greeting> findAllGreetings() {
         return greetingRepository.findAll().stream()
-            .map(GreetingEntity::toData)
+            .map(GreetingEntity::toModel)
             .collect(Collectors.toList());
     }
 }

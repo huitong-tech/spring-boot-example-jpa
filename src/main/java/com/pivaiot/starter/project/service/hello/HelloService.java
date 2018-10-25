@@ -1,6 +1,6 @@
 package com.pivaiot.starter.project.service.hello;
 
-import com.pivaiot.starter.project.data.hello.Greeting;
+import com.pivaiot.starter.project.model.hello.Greeting;
 
 import java.util.List;
 

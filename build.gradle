@@ -24,7 +24,7 @@ targetCompatibility = 1.8
 // 依赖库的版本
 ext {
   springFoxVersion = '2.9.2'
-  commonVersion = '1.0.1'
+  commonVersion = '1.0.4'
   pebbleStarterVersion = '2.6.0'
 }
 
