@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 @Component
 @Slf4j
-public class HelloServiceImpl implements HelloService {
+public class DefaultHelloService implements HelloService {
     @Autowired
     private GreetingRepository greetingRepository;
 
