@@ -2,7 +2,7 @@ package com.pivaiot.starter.project.config;
 
 import com.pivaiot.common.exception.DefaultException;
 import com.pivaiot.common.http.ResponseJson;
-import com.pivaiot.starter.project.exception.DefaultErrorCode;
+import com.pivaiot.starter.project.exception.ErrorCodeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
@@ -53,7 +53,7 @@ public class ErrorConfig extends BasicErrorController {
         String errorViewName = "400";
         if (throwable instanceof DefaultException) {
             DefaultException ex = (DefaultException) throwable;
-            if (DefaultErrorCode.NOT_FOUND.equals(ex.getErrorCode())) {
+            if (ErrorCodeEnum.NOT_FOUND.equals(ex.getErrorCode())) {
                 errorViewName = "404";
                 return new ModelAndView("error/" + errorViewName, model, HttpStatus.NOT_FOUND);
             }
@@ -77,7 +77,7 @@ public class ErrorConfig extends BasicErrorController {
             return new ResponseEntity<>(ResponseJson.err(getAppName(), ex), HttpStatus.BAD_REQUEST);
         } else {
             return new ResponseEntity<>(ResponseJson.err(getAppName(), new DefaultException(throwable,
-                    DefaultErrorCode.UNKNOWN)),
+                    ErrorCodeEnum.UNKNOWN)),
                     HttpStatus.BAD_REQUEST);
         }
     }
