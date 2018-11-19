@@ -1,7 +1,7 @@
-package com.pivaiot.starter.project.service.hello;
+package com.pivaiot.starter.project.service.user;
 
 import com.pivaiot.common.db.AutoIncrementIdEntity;
-import com.pivaiot.starter.project.model.hello.Greeting;
+import com.pivaiot.starter.project.service.data.User;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Table(name = "greeting")
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class GreetingEntity extends AutoIncrementIdEntity<Greeting> {
+public class UserEntity extends AutoIncrementIdEntity<User> {
 
     @Column
     private String says;
