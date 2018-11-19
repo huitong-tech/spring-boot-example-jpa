@@ -1,7 +1,10 @@
-package com.pivaiot.starter.project.service.user;
+package com.pivaiot.starter.project.service.impl;
 
 import com.pivaiot.common.util.BeanUtil;
 import com.pivaiot.starter.project.service.data.User;
+import com.pivaiot.starter.project.service.impl.entity.UserEntity;
+import com.pivaiot.starter.project.service.impl.repository.UserRepository;
+import com.pivaiot.starter.project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

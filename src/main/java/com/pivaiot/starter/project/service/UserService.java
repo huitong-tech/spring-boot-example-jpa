@@ -1,4 +1,4 @@
-package com.pivaiot.starter.project.service.user;
+package com.pivaiot.starter.project.service;
 
 import com.pivaiot.starter.project.service.data.User;
 
