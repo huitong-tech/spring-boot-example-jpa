@@ -1,6 +1,6 @@
 package com.pivaiot.starter.project.common.db;
 
-import com.pivaiot.common.db.BaseEntity;
+import com.pivaiot.common.db.jpa.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Id;

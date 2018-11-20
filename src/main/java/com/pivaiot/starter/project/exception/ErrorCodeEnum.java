@@ -1,7 +1,7 @@
 package com.pivaiot.starter.project.exception;
 
 
-import com.pivaiot.common.exception.ErrorCode;
+import com.pivaiot.common.lang.exception.ErrorCode;
 
 public enum ErrorCodeEnum implements ErrorCode {
     UNKNOWN(100001),

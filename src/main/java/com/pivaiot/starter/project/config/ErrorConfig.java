@@ -1,7 +1,7 @@
 package com.pivaiot.starter.project.config;
 
-import com.pivaiot.common.exception.DefaultException;
-import com.pivaiot.common.http.ResponseJson;
+import com.pivaiot.common.lang.exception.CommonException;
+import com.pivaiot.common.lang.http.ResponseJson;
 import com.pivaiot.starter.project.exception.ErrorCodeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,8 +51,8 @@ public class ErrorConfig extends BasicErrorController {
                 this.isIncludeStackTrace(request, MediaType.TEXT_HTML)));
 
         String errorViewName = "400";
-        if (throwable instanceof DefaultException) {
-            DefaultException ex = (DefaultException) throwable;
+        if (throwable instanceof CommonException) {
+            CommonException ex = (CommonException) throwable;
             if (ErrorCodeEnum.NOT_FOUND.equals(ex.getErrorCode())) {
                 errorViewName = "404";
                 return new ModelAndView("error/" + errorViewName, model, HttpStatus.NOT_FOUND);
@@ -72,11 +72,11 @@ public class ErrorConfig extends BasicErrorController {
         Throwable throwable = getError(requestAttributes);
         LOGGER.warn("Api error found: {}", request.getRequestURI(), throwable);
 
-        if (throwable instanceof DefaultException) {
-            DefaultException ex = (DefaultException) throwable;
+        if (throwable instanceof CommonException) {
+            CommonException ex = (CommonException) throwable;
             return new ResponseEntity<>(ResponseJson.err(getAppName(), ex), HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(ResponseJson.err(getAppName(), new DefaultException(throwable,
+            return new ResponseEntity<>(ResponseJson.err(getAppName(), new CommonException(throwable,
                     ErrorCodeEnum.UNKNOWN)),
                     HttpStatus.BAD_REQUEST);
         }

@@ -2,7 +2,7 @@ package com.pivaiot.starter.project.config.swagger;
 
 import com.fasterxml.classmate.TypeResolver;
 import com.google.common.base.Optional;
-import com.pivaiot.common.annotation.Limit;
+import com.pivaiot.common.lang.annotation.Limit;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import springfox.documentation.service.ResolvedMethodParameter;

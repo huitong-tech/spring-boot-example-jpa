@@ -1,6 +1,6 @@
 package com.pivaiot.starter.project.service.impl;
 
-import com.pivaiot.common.util.BeanUtil;
+import com.pivaiot.common.lang.util.BeanUtil;
 import com.pivaiot.starter.project.service.data.User;
 import com.pivaiot.starter.project.service.impl.entity.UserEntity;
 import com.pivaiot.starter.project.service.impl.repository.UserRepository;
@@ -17,12 +17,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(Long id) {
-        return userRepository.findById(id).map(UserEntity::toModel).orElse(null);
+        return userRepository.findById(id).map(UserEntity::toData).orElse(null);
     }
 
     @Override
     public List<User> findAllUsers() {
-        return userRepository.findAll().stream().map(UserEntity::toModel).collect(Collectors.toList());
+        return userRepository.findAll().stream().map(UserEntity::toData).collect(Collectors.toList());
     }
 
     @Override
@@ -30,6 +30,6 @@ public class UserServiceImpl implements UserService {
         UserEntity userEntity = user.getId() == null ? new UserEntity() : userRepository.findById(user.getId()).orElse(new UserEntity());
         BeanUtil.copyProperties(user, userEntity);
         userEntity = userRepository.save(userEntity);
-        return userEntity.toModel();
+        return userEntity.toData();
     }
 }

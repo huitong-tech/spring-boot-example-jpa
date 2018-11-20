@@ -1,9 +1,9 @@
 package com.pivaiot.starter.project.exception;
 
 
-import com.pivaiot.common.exception.DefaultException;
+import com.pivaiot.common.lang.exception.CommonException;
 
-public class NotFoundException extends DefaultException {
+public class NotFoundException extends CommonException {
     public NotFoundException() {
         super(ErrorCodeEnum.NOT_FOUND);
     }

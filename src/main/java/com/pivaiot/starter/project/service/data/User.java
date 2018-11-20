@@ -1,6 +1,6 @@
 package com.pivaiot.starter.project.service.data;
 
-import com.pivaiot.common.model.BaseIdAndTimeModel;
+import com.pivaiot.common.lang.data.BaseIdAndTimeData;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +12,7 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User extends BaseIdAndTimeModel {
+public class User extends BaseIdAndTimeData {
 
     private String username;
 

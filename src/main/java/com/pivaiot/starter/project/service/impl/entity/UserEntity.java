@@ -1,6 +1,6 @@
 package com.pivaiot.starter.project.service.impl.entity;
 
-import com.pivaiot.common.db.AutoIncrementIdEntity;
+import com.pivaiot.common.db.jpa.AutoIncrementIdEntity;
 import com.pivaiot.starter.project.service.data.User;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
