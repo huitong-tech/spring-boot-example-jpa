@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.6.RELEASE'
+        springBootVersion = '2.0.7.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -43,7 +43,6 @@ allprojects {
       dependency "io.springfox:springfox-swagger2:$springFoxVersion"
       dependency "io.springfox:springfox-swagger-ui:$springFoxVersion"
       dependency "com.github.pivaiot.common:common-db-jpa:$commonVersion"
-      dependency "io.pebbletemplates:pebble-spring-boot-2-starter:$pebbleStarterVersion"
     }
   }
 }
@@ -70,9 +69,6 @@ dependencies {
   // Web
   //implementation('org.springframework.boot:spring-boot-starter-security')
   implementation('org.springframework.boot:spring-boot-starter-web')
-
-  // Template Engine
-  implementation("io.pebbletemplates:pebble-spring-boot-2-starter")
 
   // Session
   //implementation('org.springframework.session:spring-session-data-redis')
