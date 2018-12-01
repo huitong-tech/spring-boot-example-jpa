@@ -25,7 +25,6 @@ targetCompatibility = 1.8
 ext {
   springFoxVersion = '2.9.2'
   commonVersion = '2.0.2'
-  pebbleStarterVersion = '2.6.0'
 }
 
 // 所有的项目(包括子项目)的依赖版本管理
