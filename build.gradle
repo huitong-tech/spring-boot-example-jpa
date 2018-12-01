@@ -24,7 +24,7 @@ targetCompatibility = 1.8
 // 依赖库的版本
 ext {
   springFoxVersion = '2.9.2'
-  commonVersion = '2.0.1'
+  commonVersion = '2.0.2'
   pebbleStarterVersion = '2.6.0'
 }
 
@@ -42,6 +42,7 @@ allprojects {
     dependencies {
       dependency "io.springfox:springfox-swagger2:$springFoxVersion"
       dependency "io.springfox:springfox-swagger-ui:$springFoxVersion"
+      dependency "com.github.pivaiot.common:common-lang:$commonVersion"
       dependency "com.github.pivaiot.common:common-db-jpa:$commonVersion"
     }
   }
@@ -50,6 +51,7 @@ allprojects {
 // 当前项目的依赖
 dependencies {
   // Util
+  implementation('com.github.pivaiot.common:common-lang')
   implementation('com.github.pivaiot.common:common-db-jpa')
   compileOnly('org.projectlombok:lombok')
   // 可以启用热更新

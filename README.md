@@ -1,4 +1,4 @@
-# Spring Boot Starter Project
+# Spring Boot JPA Example
 
 ## Purpose
 

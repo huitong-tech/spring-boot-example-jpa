@@ -1,16 +1,36 @@
 package com.pivaiot.example.jpa.web.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.pivaiot.common.lang.http.ResponseJson;
+import com.pivaiot.example.jpa.service.data.User;
+import com.pivaiot.example.jpa.web.converter.UserConverter;
+import com.pivaiot.example.jpa.web.model.UserModel;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+import static com.pivaiot.common.lang.http.ResponseJson.ok;
+
+
+@RestController
 @RequestMapping("/users")
-public class UserController {
+public class UserController extends BaseController {
+
+    @GetMapping("/{userId}")
+    public ResponseJson<UserModel> getUserById(@PathVariable("userId") Long userId) {
+        return ok(UserConverter.INSTANCE.toModel(userService.getUserById(userId)));
+    }
 
     @GetMapping
-    public String list() {
-        return "user/list-user";
+    public ResponseJson<List<UserModel>> findAllUsers() {
+
+        return ok(UserConverter.INSTANCE.toModelList(userService.findAllUsers()));
+
+    }
+
+    @PostMapping
+    public ResponseJson<UserModel> createUser(@RequestBody UserModel userModel) {
+        User user = UserConverter.INSTANCE.toData(userModel);
+        return ok(UserConverter.INSTANCE.toModel(userService.save(user)));
     }
 
 }
